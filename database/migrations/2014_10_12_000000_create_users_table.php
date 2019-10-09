@@ -20,7 +20,12 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('NIC')->unique()->nullable();
-            $table->integer('contac_no')->unique()->nullable();
+            $table->string('Location')->nullable();
+            $table->string('Description')->nullable();
+            $table->string('catagory')->nullable();
+            $table->string('position')->default("user");
+            $table->integer('block')->default(0);
+            $table->integer('Mobile_Number')->unique()->nullable();
             $table->integer('salary_per_hour')->nullable();
             $table->tinyInteger('available')->default(0);
             $table->integer('rating')->nullable();
