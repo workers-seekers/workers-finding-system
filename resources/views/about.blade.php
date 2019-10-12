@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Jobpply - Free Bootstrap 4 Template by Colorlib</title>
+    <title>About</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -27,8 +27,7 @@
     <link rel="stylesheet" href="Home/css/style.css">
   </head>
   <body>
-    
-	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
 	      <a class="navbar-brand" href="/home">Find Seekers</a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,11 +45,13 @@
               
                <li class="nav-item"><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
                  class="nav-link">Logout</a>
+
                           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                               {{ csrf_field() }}
                           </form>
                      </li>
-               @if(Auth::user()->position  =='Admin' ) 
+
+                @if(Auth::user()->position  =='Admin' ) 
                    <li class="nav-item cta mr-md-1"><a href="/admin" class="nav-link">Admin</a></li>
                @endif
 
@@ -63,180 +64,36 @@
 	    </div>
 	  </nav>
     <!-- END nav -->
-    
-    <div class="hero-wrap js-fullheight">
+    <div class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
-      <div class="container-fluid px-0">
-      	<div class="row d-md-flex no-gutters slider-text align-items-end js-fullheight justify-content-end">
-	      	<img class="one-third align-self-end order-md-last img-fluid" src="Home/images/undraw_work_time_lhoj.svg" alt="">
-	        <div class="one-forth d-flex align-items-center ftco-animate js-fullheight">
-	        	<div class="text mt-5">
-	        		<p class="mb-4 mt-5 pt-5">We have <span class="number" data-number="200000">0</span> great job offers you deserve!</p>
-	            <h1 class="mb-5">Largets Job Site In The World</h1>
-
-							<div class="ftco-search">
-								<div class="row">
-			            <div class="col-md-12 nav-link-wrap">
-				            <div class="nav nav-pills text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-				              <a class="nav-link active mr-md-1" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Find a Job</a>
-
-				              <a class="nav-link" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Find a Candidate</a>
-
-				            </div>
-				          </div>
-				          <div class="col-md-12 tab-wrap">
-				            
-				            <div class="tab-content p-4" id="v-pills-tabContent">
-
-				              <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-nextgen-tab">
-				              	<form action="#" class="search-job">
-				              		<div class="row no-gutters">
-				              			<div class="col-md mr-md-2">
-				              				<div class="form-group">
-					              				<div class="form-field">
-					              					<div class="icon"><span class="icon-briefcase"></span></div>
-									                <input type="text" class="form-control" placeholder="eg. Garphic. Web Developer">
-									              </div>
-								              </div>
-				              			</div>
-				              			<div class="col-md mr-md-2">
-				              				<div class="form-group">
-				              					<div class="form-field">
-					              					<div class="select-wrap">
-							                      <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-							                      <select name="" id="" class="form-control">
-							                      	<option value="">Category</option>
-							                      	<option value="">Full Time</option>
-							                        <option value="">Part Time</option>
-							                        <option value="">Freelance</option>
-							                        <option value="">Internship</option>
-							                        <option value="">Temporary</option>
-							                      </select>
-							                    </div>
-									              </div>
-								              </div>
-				              			</div>
-				              			<div class="col-md mr-md-2">
-				              				<div class="form-group">
-				              					<div class="form-field">
-					              					<div class="icon"><span class="icon-map-marker"></span></div>
-									                <input type="text" class="form-control" placeholder="Location">
-									              </div>
-								              </div>
-				              			</div>
-				              			<div class="col-md">
-				              				<div class="form-group">
-				              					<div class="form-field">
-								                	<button type="submit" class="form-control btn btn-secondary">Search</button>
-									              </div>
-								              </div>
-				              			</div>
-				              		</div>
-				              	</form>
-				              </div>
-
-				              <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-performance-tab">
-				              	<form action="#" class="search-job">
-				              		<div class="row">
-				              			<div class="col-md">
-				              				<div class="form-group">
-					              				<div class="form-field">
-					              					<div class="icon"><span class="icon-user"></span></div>
-									                <input type="text" class="form-control" placeholder="eg. Adam Scott">
-									              </div>
-								              </div>
-				              			</div>
-				              			<div class="col-md">
-				              				<div class="form-group">
-				              					<div class="form-field">
-					              					<div class="select-wrap">
-							                      <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-							                      <select name="" id="" class="form-control">
-							                      	<option value="">Category</option>
-							                      	<option value="">Full Time</option>
-							                        <option value="">Part Time</option>
-							                        <option value="">Freelance</option>
-							                        <option value="">Internship</option>
-							                        <option value="">Temporary</option>
-							                      </select>
-							                    </div>
-									              </div>
-								              </div>
-				              			</div>
-				              			<div class="col-md">
-				              				<div class="form-group">
-				              					<div class="form-field">
-					              					<div class="icon"><span class="icon-map-marker"></span></div>
-									                <input type="text" class="form-control" placeholder="Location">
-									              </div>
-								              </div>
-				              			</div>
-				              			<div class="col-md">
-				              				<div class="form-group">
-				              					<div class="form-field">
-									                <button type="submit" class="form-control btn btn-secondary">Search</button>
-									              </div>
-								              </div>
-				              			</div>
-				              		</div>
-				              	</form>
-				              </div>
-				            </div>
-				          </div>
-				        </div>
-			        </div>
-	          </div>
-	        </div>
-	    	</div>
-      </div>
-    </div>
-
-    <section class="ftco-section services-section bg-primary">
       <div class="container">
-        <div class="row d-flex">
-          <div class="col-md-3 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services d-block">
-              <div class="icon"><span class="flaticon-resume"></span></div>
-              <div class="media-body">
-                <h3 class="heading mb-3">Search Millions of Jobs</h3>
-                <p>A small river named Duden flows by their place and supplies.</p>
-              </div>
-            </div>      
-          </div>
-          <div class="col-md-3 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services d-block">
-              <div class="icon"><span class="flaticon-collaboration"></span></div>
-              <div class="media-body">
-                <h3 class="heading mb-3">Easy To Manage Jobs</h3>
-                <p>A small river named Duden flows by their place and supplies.</p>
-              </div>
-            </div>    
-          </div>
-          <div class="col-md-3 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services d-block">
-              <div class="icon"><span class="flaticon-promotions"></span></div>
-              <div class="media-body">
-                <h3 class="heading mb-3">Top Careers</h3>
-                <p>A small river named Duden flows by their place and supplies.</p>
-              </div>
-            </div>      
-          </div>
-          <div class="col-md-3 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services d-block">
-              <div class="icon"><span class="flaticon-employee"></span></div>
-              <div class="media-body">
-                <h3 class="heading mb-3">Search Expert Candidates</h3>
-                <p>A small river named Duden flows by their place and supplies.</p>
-              </div>
-            </div>      
+        <div class="row no-gutters slider-text align-items-end justify-content-start">
+          <div class="col-md-8 ftco-animate text-center text-md-left mb-5">
+          	<p class="breadcrumbs mb-0"><span class="mr-3"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>About</span></p>
+            <h1 class="mb-3 bread">About Us</h1>
           </div>
         </div>
       </div>
+    </div>
+
+    <section class="ftco-section">
+    	<div class="container">
+    		<div class="row justify-content-center">
+    			<div class="col-md-10">
+    				<div class="intro row text-center justify-content-center">
+    					<div class="col-md-9">
+    						<img class="img-fluid" src="images/undraw_work_time_lhoj.svg" alt="">
+    					</div>
+    					<h2 class="mb-4">Welcome to Jobpply</h2>
+    					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+    					<p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
     </section>
 
-
-
-    <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/bg_1.jpg);" data-stellar-background-ratio="0.5">
+   	<section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/bg_1.jpg);" data-stellar-background-ratio="0.5">
     	<div class="container">
     		<div class="row justify-content-center">
     			<div class="col-md-12">
@@ -290,9 +147,8 @@
         </div>
     	</div>
     </section>
-
-
-    <section class="ftco-section testimony-section">
+		
+		<section class="ftco-section testimony-section">
       <div class="container">
         <div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 text-center heading-section ftco-animate">
@@ -372,136 +228,6 @@
                     <span class="position">System Analyst</span>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="ftco-section ftco-candidates bg-primary">
-    	<div class="container">
-    		<div class="row justify-content-center pb-3">
-          <div class="col-md-10 heading-section heading-section-white text-center ftco-animate">
-          	<span class="subheading">Candidates</span>
-            <h2 class="mb-4">Latest Candidates</h2>
-          </div>
-        </div>
-    	</div>
-    	<div class="container">
-        <div class="row">
-        	<div class="col-md-12 ftco-animate">
-        		<div class="carousel-candidates owl-carousel">
-        			<div class="item">
-		        		<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(images/person_1.jpg);"></div>
-		        			<h2>Danica Lewis</h2>
-		        			<span class="position">Western City, UK</span>
-		        		</a>
-        			</div>
-        			<div class="item">
-	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(images/person_2.jpg);"></div>
-		        			<h2>Nicole Simon</h2>
-		        			<span class="position">Western City, UK</span>
-		        		</a>
-	        		</div>
-	        		<div class="item">
-	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(images/person_3.jpg);"></div>
-		        			<h2>Cloe Meyer</h2>
-		        			<span class="position">Western City, UK</span>
-		        		</a>
-	        		</div>
-	        		<div class="item">
-	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(images/person_4.jpg);"></div>
-		        			<h2>Rachel Clinton</h2>
-		        			<span class="position">Western City, UK</span>
-		        		</a>
-	        		</div>
-	        		<div class="item">
-	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(images/person_5.jpg);"></div>
-		        			<h2>Dave Buff</h2>
-		        			<span class="position">Western City, UK</span>
-		        		</a>
-	        		</div>
-	        		<div class="item">
-	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(images/person_6.jpg);"></div>
-		        			<h2>Dave Buff</h2>
-		        			<span class="position">Western City, UK</span>
-		        		</a>
-	        		</div>
-        		</div>
-        	</div>
-        </div>
-    	</div>
-    </section>
-
-    <section class="ftco-section bg-light">
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-          	<span class="subheading">Our Blog</span>
-            <h2><span>Recent</span> Blog</h2>
-          </div>
-        </div>
-        <div class="row d-flex">
-          <div class="col-md-3 d-flex ftco-animate">
-            <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
-              </a>
-              <div class="text mt-3">
-              	<div class="meta mb-2">
-                  <div><a href="#">May 3, 2019</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 d-flex ftco-animate">
-            <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_2.jpg');">
-              </a>
-              <div class="text mt-3">
-              	<div class="meta mb-2">
-                  <div><a href="#">May 3, 2019</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 d-flex ftco-animate">
-            <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_3.jpg');">
-              </a>
-              <div class="text mt-3">
-              	<div class="meta mb-2">
-                  <div><a href="#">May 3, 2019</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 d-flex ftco-animate">
-            <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_4.jpg');">
-              </a>
-              <div class="text mt-3">
-              	<div class="meta mb-2">
-                  <div><a href="#">May 3, 2019</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
               </div>
             </div>
           </div>
