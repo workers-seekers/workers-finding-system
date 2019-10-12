@@ -88,7 +88,6 @@
 
 				              <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-nextgen-tab">
 				              	<form action="/searchcandidate"method="post" class="search-job">
-                        
 				              		<div class="row no-gutters">
 				              		
 				              			<div class="col-md mr-md-2">
