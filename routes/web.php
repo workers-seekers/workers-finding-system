@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+//count candidate and show in home page 
+Route::get('/', 'FrontController@countcandidate');
 
 Route::get('/about', function () {
     return view('about');

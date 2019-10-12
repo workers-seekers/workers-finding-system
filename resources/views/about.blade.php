@@ -51,7 +51,7 @@
                           </form>
                      </li>
 
-                @if(Auth::user()->position  =='Admin' ) 
+              @if(Auth::user()->position  =='Admin' ) 
                    <li class="nav-item cta mr-md-1"><a href="/admin" class="nav-link">Admin</a></li>
                @endif
 
