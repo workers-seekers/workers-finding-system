@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use App\User;
 use DB;
 use Auth;
+use Image;
 
 class FrontController extends Controller
 {
@@ -68,4 +70,73 @@ class FrontController extends Controller
          return redirect('profile');        
     }
     
+    //update profile photo
+    function profileimageupload(Request $request){
+
+        $this->validate($request, [
+            'select_file'  => 'required|image|mimes:jpg,png,gif|max:102400'
+        ]);
+    
+        $image = $request->file('select_file');
+    
+        $new_name = rand() . '.' . $image->getClientOriginalExtension();
+        
+        Image::make($image)->resize(300,300)->save(public_path('/profileimg/'.  $new_name));
+    
+        $user=Auth::user();
+        $user->profile_pic  =$new_name;
+        $user->save();
+
+        return back()->with('path', $new_name);
+    }
+
+    //show all user admin
+    public function allusershowadmin(){
+
+        $showalldata = User::get();
+       
+        return view('/adminpenal',compact('showalldata'));
+    }
+
+    //make admin
+     public function makeadmin($id){
+    
+      $data = User::find( $id);
+      $data->position = 'Admin'; 
+      $data->update(); 
+      return redirect()->back();
+
+    }
+
+    //make user
+     public function makeuser($id){
+    
+      $data = User::find( $id);
+      $data->position = 'user'; 
+      $data->update(); 
+      return redirect()->back();
+
+    }
+
+    //make block
+     public function blockuser($id){
+    
+      $data = User::find( $id);
+      $data->block = 1; 
+      $data->update(); 
+      return redirect()->back();
+
+    }
+
+    //make unblock
+     public function unblockuser($id){
+    
+      $data = User::find( $id);
+      $data->block = 0; 
+      $data->update(); 
+      return redirect()->back();
+
+    }
+
+
 }

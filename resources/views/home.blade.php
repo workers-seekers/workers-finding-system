@@ -51,7 +51,7 @@
                           </form>
                      </li>
                @if(Auth::user()->position  =='Admin' ) 
-                   <li class="nav-item cta mr-md-1"><a href="/admin" class="nav-link">Admin</a></li>
+                   <li class="nav-item cta mr-md-1"><a href="/adminpenal" class="nav-link">Admin</a></li>
                @endif
 
          @else
@@ -88,7 +88,8 @@
 
 				              <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-nextgen-tab">
 				              	<form action="/searchcandidate"method="post" class="search-job">
-				              		<div class="row no-gutters">
+				              	 @csrf
+                        	<div class="row no-gutters">
 				              		
 				              			<div class="col-md mr-md-2">
 				              				<div class="form-group">
@@ -111,7 +112,34 @@
 				              				<div class="form-group">
 				              					<div class="form-field">
 					              					<div class="icon"><span class="icon-map-marker"></span></div>
-									                <input type="text" class="form-control" placeholder="Location">
+									                  <select  type="text" name = "location" class="form-control" required>
+                                      <option value="">Chose Location</option>
+                                      <option >Ampara</option>
+                                      <option>Anuradhapura</option>
+                                      <option>Badulla</option>
+                                      <option>Batticaloa</option>
+                                      <option>Colombo</option>
+                                      <option>Galle</option>
+                                      <option>Gampaha</option>
+                                      <option>Hambantota</option>
+                                      <option>Jaffna</option>
+                                      <option>Kalutara</option>
+                                      <option>Kandy</option>
+                                      <option>Kegalle</option>
+                                      <option>Kilinochchi</option>
+                                      <option>Kurunegala</option>
+                                      <option>Mannar</option>
+                                      <option>Matale</option>
+                                      <option>Matara</option>
+                                      <option>Monaragala</option>
+                                      <option>Mullativu</option>
+                                      <option>Nuwara Eliya</option>
+                                      <option>Polonnaruwa</option>
+                                      <option>Puttalam</option>
+                                      <option>Ratnapura</option>
+                                      <option>Trincomalee</option>
+                                      <option>Vavuniya</option>
+                                   </select>
 									              </div>
 								              </div>
 				              			</div>
@@ -202,7 +230,7 @@
 		              	<div class="icon">
 		              		<span class="flaticon-collaboration"></span>
 		              	</div>
-		                <strong class="number" data-number="40000">0</strong>
+		                <strong class="number" data-number="{{$countcandidate}}">0</strong>
 		                <span>Members</span>
 		              </div>
 		            </div>
@@ -249,7 +277,7 @@
             <div class="carousel-testimony owl-carousel ftco-owl">
               <div class="item">
                 <div class="testimony-wrap py-4 pb-5">
-                  <div class="user-img mb-4" style="background-image: url(images/person_1.jpg)">
+                  <div class="user-img mb-4" style="background-image: url(Home/images/person_1.jpg)">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
@@ -263,7 +291,7 @@
               </div>
               <div class="item">
                 <div class="testimony-wrap py-4 pb-5">
-                  <div class="user-img mb-4" style="background-image: url(images/person_2.jpg)">
+                  <div class="user-img mb-4" style="background-image: url(Home/images/person_2.jpg)">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
@@ -277,7 +305,7 @@
               </div>
               <div class="item">
                 <div class="testimony-wrap py-4 pb-5">
-                  <div class="user-img mb-4" style="background-image: url(images/person_3.jpg)">
+                  <div class="user-img mb-4" style="background-image: url(Home/images/person_3.jpg)">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
@@ -291,7 +319,7 @@
               </div>
               <div class="item">
                 <div class="testimony-wrap py-4 pb-5">
-                  <div class="user-img mb-4" style="background-image: url(images/person_1.jpg)">
+                  <div class="user-img mb-4" style="background-image: url(Home/images/person_1.jpg)">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
@@ -305,7 +333,7 @@
               </div>
               <div class="item">
                 <div class="testimony-wrap py-4 pb-5">
-                  <div class="user-img mb-4" style="background-image: url(images/person_1.jpg)">
+                  <div class="user-img mb-4" style="background-image: url(Home/images/person_1.jpg)">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
@@ -336,48 +364,15 @@
         <div class="row">
         	<div class="col-md-12 ftco-animate">
         		<div class="carousel-candidates owl-carousel">
-        			<div class="item">
+        			@foreach($latestcandidate as $data)
+              <div class="item">
 		        		<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(images/person_1.jpg);"></div>
-		        			<h2>Danica Lewis</h2>
-		        			<span class="position">Western City, UK</span>
+		        			<div class="img" style="background-image: url(/profileimg/{{$data->profile_pic}});"></div>
+		        			<h2>{{$data -> name}}</h2>
+		        			<span class="position">{{$data->Location}}</span>
 		        		</a>
         			</div>
-        			<div class="item">
-	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(images/person_2.jpg);"></div>
-		        			<h2>Nicole Simon</h2>
-		        			<span class="position">Western City, UK</span>
-		        		</a>
-	        		</div>
-	        		<div class="item">
-	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(images/person_3.jpg);"></div>
-		        			<h2>Cloe Meyer</h2>
-		        			<span class="position">Western City, UK</span>
-		        		</a>
-	        		</div>
-	        		<div class="item">
-	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(images/person_4.jpg);"></div>
-		        			<h2>Rachel Clinton</h2>
-		        			<span class="position">Western City, UK</span>
-		        		</a>
-	        		</div>
-	        		<div class="item">
-	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(images/person_5.jpg);"></div>
-		        			<h2>Dave Buff</h2>
-		        			<span class="position">Western City, UK</span>
-		        		</a>
-	        		</div>
-	        		<div class="item">
-	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(images/person_6.jpg);"></div>
-		        			<h2>Dave Buff</h2>
-		        			<span class="position">Western City, UK</span>
-		        		</a>
-	        		</div>
+        		 @endforeach        
         		</div>
         	</div>
         </div>
@@ -395,7 +390,7 @@
         <div class="row d-flex">
           <div class="col-md-3 d-flex ftco-animate">
             <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
+              <a href="blog-single.html" class="block-20" style="background-image: url('Home/images/image_1.jpg');">
               </a>
               <div class="text mt-3">
               	<div class="meta mb-2">
@@ -409,7 +404,7 @@
           </div>
           <div class="col-md-3 d-flex ftco-animate">
             <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_2.jpg');">
+              <a href="blog-single.html" class="block-20" style="background-image: url('Home/images/image_2.jpg');">
               </a>
               <div class="text mt-3">
               	<div class="meta mb-2">
@@ -423,7 +418,7 @@
           </div>
           <div class="col-md-3 d-flex ftco-animate">
             <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_3.jpg');">
+              <a href="blog-single.html" class="block-20" style="background-image: url('Home/images/image_3.jpg');">
               </a>
               <div class="text mt-3">
               	<div class="meta mb-2">
@@ -437,7 +432,7 @@
           </div>
           <div class="col-md-3 d-flex ftco-animate">
             <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_4.jpg');">
+              <a href="blog-single.html" class="block-20" style="background-image: url('Home/images/image_4.jpg');">
               </a>
               <div class="text mt-3">
               	<div class="meta mb-2">
